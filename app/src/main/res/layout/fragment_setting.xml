@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.setting.SettingFragment">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="142dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/round_blue_background"
+        android:padding="25dp"
+        android:src="@drawable/candlestick_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Trading Journal"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+
+    <LinearLayout
+        android:id="@+id/btnLinearLayoutExcel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/setting_button_background"
+        android:weightSum="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="7dp"
+            android:src="@drawable/icn_xls" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center_vertical"
+            android:text="Export to Excel"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginVertical="1dp"
+        android:background="#3C555353"
+        app:layout_constraintLeft_toLeftOf="@+id/btnLinearLayoutExcel"
+        app:layout_constraintRight_toRightOf="@+id/btnLinearLayoutExcel"
+        app:layout_constraintTop_toBottomOf="@+id/btnLinearLayoutExcel" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutExportPDF"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/setting_button_background"
+        android:elevation="0dp"
+        android:weightSum="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLinearLayoutExcel">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="7dp"
+            android:src="@drawable/icn_pdf" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center_vertical"
+            android:text="Export to Pdf"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginVertical="1dp"
+        android:background="#3C555353"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayoutExportPDF"
+        app:layout_constraintRight_toRightOf="@+id/linearLayoutExportPDF"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutExportPDF" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDeleteAll"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/setting_button_background"
+        android:elevation="0dp"
+        android:weightSum="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutExportPDF">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="6dp"
+            android:src="@drawable/icn_delete" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center_vertical"
+            android:text="Delete All Records"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginVertical="1dp"
+        android:background="#3C555353"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayoutDeleteAll"
+        app:layout_constraintRight_toRightOf="@+id/linearLayoutDeleteAll"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutDeleteAll" />
+
+    <TextView
+        android:id="@+id/txtVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="version 1.0"
+        android:textColor="@color/colorPrimary"
+        android:textSize="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayoutDeleteAll"
+        app:layout_constraintRight_toRightOf="@+id/linearLayoutDeleteAll"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutDeleteAll" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

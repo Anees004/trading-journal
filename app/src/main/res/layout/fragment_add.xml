@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".UI.Input.AddFragment">
+    <!--     -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:outlineAmbientShadowColor="#B71C1C"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:id="@+id/textStartingBalance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/edittext_background"
+            android:clickable="true"
+            android:drawableEnd="@drawable/ic_edit"
+            android:elevation="4dp"
+            android:focusable="true"
+            android:padding="11dp"
+            android:text="Starting Balance: $1000"
+            android:textAppearance="?android:textAppearanceMedium" />
+        <!-- Pair Dropdown -->
+        <Spinner
+            android:id="@+id/spinnerPair"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edittext_background"
+            android:elevation="4dp"
+            android:padding="11dp" />
+
+        <!-- SESS Dropdown -->
+        <Spinner
+            android:id="@+id/spinnerSESS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edittext_background"
+            android:elevation="4dp"
+            android:padding="11dp" />
+
+        <!-- Date with Calendar Icon -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edittext_background"
+            android:elevation="4dp">
+
+            <EditText
+                android:id="@+id/editDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_background"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="Date"
+                android:inputType="none"
+                android:padding="11dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="11dp"
+                android:src="@drawable/ic_calendar" />
+        </RelativeLayout>
+
+        <!-- L/S Dropdown -->
+        <Spinner
+            android:id="@+id/spinnerLS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edittext_background"
+            android:elevation="4dp"
+            android:padding="11dp" />
+
+        <!-- Result Dropdown -->
+        <Spinner
+            android:id="@+id/spinnerResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edittext_background"
+            android:elevation="4dp"
+            android:padding="11dp" />
+
+        <!-- % Gain -->
+        <EditText
+            android:id="@+id/editPercentGain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edittext_background"
+            android:elevation="4dp"
+            android:hint="% Gain"
+            android:inputType="numberDecimal"
+            android:padding="11dp" />
+
+        <!-- Profit -->
+        <EditText
+            android:id="@+id/editProfit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edittext_background"
+            android:elevation="4dp"
+            android:hint="Profit"
+            android:inputType="numberSigned"
+            android:padding="11dp" />
+
+        <!-- Max RR -->
+        <EditText
+            android:id="@+id/editMaxRR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edittext_background"
+            android:elevation="4dp"
+            android:hint="Max RR"
+            android:inputType="numberSigned"
+            android:padding="11dp" />
+
+        <!-- Error Dropdown -->
+        <Spinner
+            android:id="@+id/spinnerError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edittext_background"
+            android:elevation="4dp"
+            android:padding="11dp" />
+
+        <!-- Mindset Dropdown -->
+        <Spinner
+            android:id="@+id/spinnerMindset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edittext_background"
+            android:elevation="4dp"
+            android:padding="11dp" />
+
+        <!-- Day (Automatically Updated) -->
+        <TextView
+            android:id="@+id/textDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edittext_background"
+            android:elevation="4dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="11dp"
+            android:paddingRight="11dp"
+            android:paddingBottom="11dp"
+
+            android:text="Day: "
+            android:textSize="16sp" />
+
+        <!-- TP Dropdown -->
+        <Spinner
+            android:id="@+id/spinnerTP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edittext_background"
+            android:elevation="4dp"
+            android:padding="11dp" />
+
+        <!-- TV Pic -->
+        <RelativeLayout
+            android:id="@+id/relativeLayoutTVpic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edittext_background"
+            android:elevation="4dp">
+
+            <EditText
+                android:id="@+id/editTVPic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_background"
+                android:hint="TV Pic"
+                android:inputType="textUri"
+                android:padding="11dp" />
+
+            <ImageView
+                android:id="@+id/btnAddImg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="11dp"
+                android:src="@drawable/link_icn" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/editStopLoss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edittext_background"
+            android:elevation="4dp"
+            android:hint="Stop Loss"
+            android:inputType="numberSigned"
+            android:padding="11dp" />
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/button_background"
+            android:elevation="4dp"
+            android:text="Save"
+            android:textColor="@color/white" />
+
+        <!--        excel import-->
+        <Button
+            android:id="@+id/btnImport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_background"
+            android:elevation="4dp"
+            android:text="Import"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</ScrollView>

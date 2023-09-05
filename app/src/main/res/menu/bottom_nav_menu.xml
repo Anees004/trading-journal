@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_dashboard"
+        android:icon="@drawable/icn_home_24"
+        android:title="Dashboard" />
+    <item
+        android:id="@+id/nav_charts"
+        android:icon="@drawable/icn_dashboard"
+        android:title="Charts" />
+    <item
+        android:id="@+id/nav_add"
+        android:icon="@drawable/icn_add"
+        android:title="Add" />
+    <item
+        android:id="@+id/nav_all_records"
+        android:icon="@drawable/icn_edit"
+        android:title="All Records" />
+    <item
+        android:id="@+id/nav_account"
+        android:icon="@drawable/icn_setting"
+        android:title="Account" />
+</menu>

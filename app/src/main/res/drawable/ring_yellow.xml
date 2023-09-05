@@ -1,0 +1,30 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Outer Ring -->
+    <item>
+        <shape android:shape="oval">
+<!--            <solid android:color="#FF0000" />-->
+            <size android:width="300dp" android:height="300dp" />
+            <stroke android:color="#EAA210" android:width="5dp" />
+        </shape>
+    </item>
+
+    <!-- Thick Ring -->
+    <item android:left="15dp" android:top="15dp" android:right="15dp" android:bottom="15dp">
+        <shape android:shape="oval">
+<!--            <solid android:color="#00FF00" />-->
+            <size android:width="260dp" android:height="260dp" />
+            <stroke android:color="#EAA210" android:width="20dp" />
+        </shape>
+    </item>
+
+
+
+    <!-- Thin Ring 2 -->
+    <item android:left="45dp" android:top="45dp" android:right="45dp" android:bottom="45dp">
+        <shape android:shape="oval">
+<!--            <solid android:color="#FF00FF" />-->
+            <size android:width="180dp" android:height="180dp" />
+            <stroke android:color="#EAA210" android:width="5dp" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.dashboard.DashboardFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/fabButton"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="5dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                android:padding="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChartWin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPiechart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChartProfit"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp" />
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChartMaxDrawdown"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/pieChartProfit"
+                    app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+            </LinearLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChartTotalAmount"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="5dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutPiechart" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChartErrors"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="5dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineChartTotalAmount" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/relativelastTenProfit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pieChartErrors">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChartLastTenResults"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/barChartLastten"
+                    android:layout_width="260dp"
+                    android:layout_height="160dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/pieChartLastTenResults"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lastTenProfitsLineChart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="5dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativelastTenProfit" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barChartSession"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="5dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lastTenProfitsLineChart" />
+
+            <LinearLayout
+                android:id="@+id/linearLayoutShort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                app:layout_constraintTop_toBottomOf="@+id/barChartSession"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+
+
+                <LinearLayout
+                    android:id="@+id/linearTextPercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="196dp"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="45dp"
+                        android:layout_marginBottom="40dp"
+                        android:text="Short Win %"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="40dp"
+                        android:text="Long Win %"
+                        android:textSize="12dp" />
+
+                </LinearLayout>
+
+                <com.github.mikephil.charting.charts.HorizontalBarChart
+                    android:id="@+id/barChartWinLoss"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/barChartSession" />
+            </LinearLayout>
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChartMindset"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="5dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutShort" />
+
+            <Spinner
+                android:id="@+id/pairDropDown"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/dropdown_background"
+                android:padding="10dp"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pieChartMindset" />
+
+            <com.github.mikephil.charting.charts.HorizontalBarChart
+                android:id="@+id/sessionPerformanceChart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="5dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pairDropDown" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/closedEarlyConstraint"
+                android:layout_width="125dp"
+                android:layout_height="300dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/chart_border"
+                android:paddingHorizontal="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/deciplineConstraint"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sessionPerformanceChart">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Closed Early %"
+                    app:layout_constraintBottom_toTopOf="@+id/imageView"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView"
+                    app:layout_constraintStart_toStartOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/ring_yellow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/closeEarlytxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="0.0%"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    app:layout_constraintLeft_toLeftOf="@+id/imageView"
+                    app:layout_constraintRight_toRightOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="@+id/imageView" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/deciplineConstraint"
+                android:layout_width="125dp"
+                android:layout_height="300dp"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/chart_border"
+                android:paddingHorizontal="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/winLossStrConstraint"
+                app:layout_constraintStart_toEndOf="@+id/closedEarlyConstraint"
+                app:layout_constraintTop_toBottomOf="@+id/sessionPerformanceChart">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Discipline Rating"
+                    app:layout_constraintBottom_toTopOf="@+id/imageView2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/ring_darkblue"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+                <TextView
+                    android:id="@+id/deciplineRatingtxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="101"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                    app:layout_constraintLeft_toLeftOf="@+id/imageView2"
+                    app:layout_constraintRight_toRightOf="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="@+id/imageView2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/winLossStrConstraint"
+                android:layout_width="125dp"
+                android:layout_height="300dp"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/chart_border"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/deciplineConstraint"
+                app:layout_constraintTop_toBottomOf="@+id/sessionPerformanceChart">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Win Streak"
+                    app:layout_constraintBottom_toTopOf="@+id/imageView3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ring_darkgreen"
+                    app:layout_constraintBottom_toTopOf="@+id/txtspr"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                <TextView
+                    android:id="@+id/winStreaktxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="10"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                    app:layout_constraintLeft_toLeftOf="@+id/imageView3"
+                    app:layout_constraintRight_toRightOf="@+id/imageView3"
+                    app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+                <TextView
+                    android:id="@+id/txtspr"
+                    android:layout_width="100dp"
+                    android:layout_height="1dp"
+                    android:background="#A4000000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtLoseStreak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loss Streak"
+                    app:layout_constraintBottom_toTopOf="@+id/imageView4"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView4"
+                    app:layout_constraintStart_toStartOf="@+id/imageView4"
+                    app:layout_constraintTop_toBottomOf="@+id/txtspr" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ring_redish"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtLoseStreak" />
+
+                <TextView
+                    android:id="@+id/losingStreaktxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="5"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                    app:layout_constraintLeft_toLeftOf="@+id/imageView4"
+                    app:layout_constraintRight_toRightOf="@+id/imageView4"
+                    app:layout_constraintTop_toTopOf="@+id/imageView4" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barChartNASLondon"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                android:padding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/winLossStrConstraint" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barChartNASMixed"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                android:padding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barChartNASLondon" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barChartNASNewYork"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                android:padding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barChartNASMixed" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barChartDayWinsLosses"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_margin="15dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                android:padding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barChartNASNewYork" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barSLWinRate"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="15dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                android:padding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barChartDayWinsLosses" />
+
+            <com.github.mikephil.charting.charts.HorizontalBarChart
+                android:id="@+id/barChartSLProfit"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="15dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barSLWinRate" />
+
+            <Spinner
+                android:id="@+id/yearDropdown"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/dropdown_background"
+                android:padding="10dp"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barChartSLProfit" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/monthlyReportChart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@id/yearDropdown"
+                android:layout_margin="15dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/chart_border"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/yearDropdown" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewMonthlyProfit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/chart_border"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/monthlyReportChart" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewMonthlyProfit" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
